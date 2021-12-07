@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ block.super }} Create
+{% endblock %}
+
+{% block content %}
+<h1 class="original">Create new post</h1>
+
+<form action="{% url 'employee_create' %}" method="post">
+
+    {% csrf_token %}
+
+    {% for field in form %}
+    <div class="form-group">
+        {% if field.errors %}
+        <div class="alert alert-danger">
+            {{ field.errors }}
+        </div>
+        {% endif %}
+
+        {{ field.label }}
+        {{ field }}
+    </div>
+    {% endfor %}
+
+
+    <button type="submit" class="btn btn-primary">Employee Create</button>
+
+</form>
+{% endblock %}
+
