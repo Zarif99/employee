@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block content %}
+<h2>
+    <a href="{% url 'employee_create_url'%}">Add</a>
+</h2>
 <table>
     <tr>
         <th>First Name</th>
@@ -20,7 +23,8 @@
     <td>{{ employee.age }}</td>
     <td>{{ employee.department }}</td>
     <td>{{ employee.programming_language}}</td>
-    <td>edit/delete</td>
+    <td><a href="{{employee.get_update_url}}">edit</a>
+        <a href="{{employee.get_delete_url}}">delete</a></td>
     {% endfor %}
 
 </table>

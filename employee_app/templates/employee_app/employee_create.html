@@ -5,9 +5,8 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="original">Create new post</h1>
 
-<form action="{% url 'employee_create' %}" method="post">
+<form action="{% url 'employee_create_url' %}" method="post">
 
     {% csrf_token %}
 

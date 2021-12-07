@@ -44,10 +44,10 @@ class Employee(models.Model):
         return f'{self.first_name} {self.last_name}'
 
     def get_absolute_url(self):
-        return reverse('post_detail_url', kwargs={'slug': self.slug})
+        return reverse('employee_detail_url', kwargs={'pk': self.pk})
 
     def get_update_url(self):
-        return reverse('post_update_url', kwargs={'slug': self.slug})
+        return reverse('employee_update_url', kwargs={'pk': self.pk})
 
     def get_delete_url(self):
-        return reverse('post_delete_url', kwargs={'slug': self.slug})
+        return reverse('employee_delete_url', kwargs={'pk': self.pk})

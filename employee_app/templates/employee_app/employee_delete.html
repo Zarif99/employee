@@ -8,8 +8,8 @@
 
 <form action="{{ employee.get_delete_url }}" method="POST">
     {% csrf_token %}
-    <h3>Are you sure you wnt to delete Post <b>"{{ employee.name|title }}"</b></h3>
-    <a href="{{employee.get_detail_url}}">Cancel</a>
+    <h3>Are you sure you want to delete <b>"{{ employee.first_name|title }} {{employee.last_name}}"</b></h3>
+    <a href="/">Cancel</a>
     <button type="submit" name='button' class="btn btn-danger">Submit</button>
 
 </form>

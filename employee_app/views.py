@@ -1,14 +1,27 @@
-from django.shortcuts import render
-from django.views.generic import ListView, UpdateView
-from .models import Department, Employee
-from .forms import DepartmentForm
-
-
-class EmployeeUpdateView(UpdateView):
-    model = Employee
-    context_object_name = 'employee'
+from django.views.generic import ListView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from .models import Employee
 
 
 class EmployeeListView(ListView):
     model = Employee
     context_object_name = 'employees'
+
+
+class EmployeeCreateView(CreateView):
+    model = Employee
+    template_name = 'employee_app/employee_create.html'
+    fields = ('first_name', 'last_name', 'age', 'department', 'programming_language')
+
+
+class EmployeeUpdateView(UpdateView):
+    model = Employee
+    context_object_name = 'employee'
+    template_name = 'employee_app/employee_update.html'
+    fields = ('first_name', 'last_name', 'age', 'department', 'programming_language')
+
+
+class EmployeeDeleteView(DeleteView):
+    model = Employee
+    context_object_name = 'employee'
+    template_name = 'employee_app/employee_delete.html'
