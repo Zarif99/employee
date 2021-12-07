@@ -18,13 +18,15 @@
         <th></th>
     </tr>
     {% for employee in employees %}
-    <td>{{ employee.first_name }}</td>
-    <td>{{ employee.last_name }}</td>
-    <td>{{ employee.age }}</td>
-    <td>{{ employee.department }}</td>
-    <td>{{ employee.programming_language}}</td>
-    <td><a href="{{employee.get_update_url}}">edit</a>
-        <a href="{{employee.get_delete_url}}">delete</a></td>
+    <tr>
+        <td>{{ employee.first_name }}</td>
+        <td>{{ employee.last_name }}</td>
+        <td>{{ employee.age }}</td>
+        <td>{{ employee.department }}</td>
+        <td>{{ employee.programming_language}}</td>
+        <td><a href="{{employee.get_update_url}}">edit</a>
+            <a href="{{employee.get_delete_url}}">delete</a></td>
+    </tr>
     {% endfor %}
 
 </table>

@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Employee
 
@@ -12,6 +12,12 @@ class EmployeeCreateView(CreateView):
     model = Employee
     template_name = 'employee_app/employee_create.html'
     fields = ('first_name', 'last_name', 'age', 'department', 'programming_language')
+
+
+class EmployeeDetailView(DetailView):
+    model = Employee
+    template_name = 'employee_app/employee_detail.html'
+    context_object_name = 'employee'
 
 
 class EmployeeUpdateView(UpdateView):
