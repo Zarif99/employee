@@ -65,3 +65,35 @@ class DepartmentDeleteView(DeleteView):
     context_object_name = 'department'
     template_name = 'employee_app/department_delete.html'
     success_url = reverse_lazy('department_list_url')
+
+
+class LanguageListView(ListView):
+    model = Language
+    context_object_name = 'languages'
+    template_name = 'employee_app/language_list.html'
+
+
+class LanguageCreateView(CreateView):
+    model = Language
+    template_name = 'employee_app/language_create.html'
+    fields = ('name',)
+
+
+class LanguageDetailView(DetailView):
+    model = Language
+    template_name = 'employee_app/language_detail.html'
+    context_object_name = 'language'
+
+
+class LanguageUpdateView(UpdateView):
+    model = Language
+    context_object_name = 'language'
+    template_name = 'employee_app/language_update.html'
+    fields = ('name',)
+
+
+class LanguageDeleteView(DeleteView):
+    model = Language
+    context_object_name = 'language'
+    template_name = 'employee_app/language_delete.html'
+    success_url = reverse_lazy('language_list_url')

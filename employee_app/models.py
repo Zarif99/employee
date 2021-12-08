@@ -34,6 +34,15 @@ class Language(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('language_detail_url', kwargs={'pk': self.pk})
+
+    def get_update_url(self):
+        return reverse('language_update_url', kwargs={'pk': self.pk})
+
+    def get_delete_url(self):
+        return reverse('language_delete_url', kwargs={'pk': self.pk})
+
 
 class Employee(models.Model):
     first_name = models.CharField(_('First Name'), max_length=255)

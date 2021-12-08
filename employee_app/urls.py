@@ -10,6 +10,11 @@ from .views import (
     DepartmentDeleteView,
     DepartmentCreateView,
     DepartmentDetailView,
+    LanguageListView,
+    LanguageCreateView,
+    LanguageDeleteView,
+    LanguageDetailView,
+    LanguageUpdateView,
 )
 
 urlpatterns = [
@@ -23,4 +28,9 @@ urlpatterns = [
     path('department/<int:pk>/edit/', DepartmentUpdateView.as_view(), name='department_update_url'),
     path('department/<int:pk>/delete/', DepartmentDeleteView.as_view(), name='department_delete_url'),
     path('department/<int:pk>/', DepartmentDetailView.as_view(), name='department_detail_url'),
+    path('language/', LanguageListView.as_view(), name='language_list_url'),
+    path('language/add/', LanguageCreateView.as_view(), name='language_create_url'),
+    path('language/<int:pk>/edit/', LanguageUpdateView.as_view(), name='language_update_url'),
+    path('language/<int:pk>/delete/', LanguageDeleteView.as_view(), name='language_delete_url'),
+    path('language/<int:pk>/', LanguageDetailView.as_view(), name='language_detail_url'),
 ]
