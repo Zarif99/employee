@@ -14,6 +14,15 @@ class Department(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('department_detail_url', kwargs={'pk': self.pk})
+
+    def get_update_url(self):
+        return reverse('department_update_url', kwargs={'pk': self.pk})
+
+    def get_delete_url(self):
+        return reverse('department_delete_url', kwargs={'pk': self.pk})
+
 
 class Language(models.Model):
     name = models.CharField(_('Programming Language'), max_length=255)
